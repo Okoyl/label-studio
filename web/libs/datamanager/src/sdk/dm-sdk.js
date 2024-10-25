@@ -398,6 +398,8 @@ export class DataManager {
 
   /** @private */
   async initApp() {
+    if (this.root === null) return;
+
     this.store = await createApp(this.root, this);
     this.invoke("ready", [this]);
   }
